@@ -1,0 +1,62 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0d0d;
+  --bg-2: #141414;
+  --bg-3: #1a1a1a;
+  --bg-4: #222;
+  --border: rgba(255,255,255,0.08);
+  --border-2: rgba(255,255,255,0.14);
+  --text: #f0ede8;
+  --text-2: #999;
+  --text-3: #666;
+  --green: #4ade80;
+  --green-dim: #166534;
+  --green-bg: rgba(74,222,128,0.08);
+  --amber: #fbbf24;
+  --amber-bg: rgba(251,191,36,0.08);
+  --red: #f87171;
+  --red-bg: rgba(248,113,113,0.08);
+  --blue: #60a5fa;
+  --blue-bg: rgba(96,165,250,0.08);
+  --teal: #2dd4bf;
+  --font: 'IBM Plex Sans', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+html { font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+input[type="file"] { display: none; }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 4px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.fade-in { animation: fadeIn 0.3s ease forwards; }
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid var(--border-2);
+  border-top-color: var(--teal);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
