@@ -3,6 +3,6 @@ uvicorn[standard]==0.29.0
 pandas==2.1.4
 numpy==1.26.4
 python-multipart==0.0.9
-google-generativeai==0.7.2
+google-generativeai==0.8.3
 pydantic==2.7.1
 python-dotenv==1.0.1
