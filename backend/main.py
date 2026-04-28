@@ -49,7 +49,7 @@ else:
 
 if GEMINI_API_KEY:
     genai.configure(api_key=GEMINI_API_KEY)
-    gemini_model = genai.GenerativeModel("gemini-1.5-flash")
+    gemini_model = genai.GenerativeModel("gemini-1.5-flash-001")
 else:
     gemini_model = None
 
@@ -274,7 +274,7 @@ Be compelling, specific, and use real statistics where possible.""",
 
     try:
         response = gemini_model.generate_content(prompt)
-        return {"text": response.text, "model": "gemini-1.5-flash", "analysis_type": req.analysis_type}
+        return {"text": response.text, "model": "gemini-1.5-flash-001", "analysis_type": req.analysis_type}
     except Exception as e:
         raise HTTPException(500, f"Gemini API error: {str(e)}")
 
