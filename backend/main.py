@@ -26,10 +26,13 @@ app = FastAPI(
     description="AI-powered bias detection using Google Gemini",
     version="1.0.0"
 )
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://bias-dashboard-2026-49e0e.web.app",        # ← your Firebase URL
+        "https://bias-dashboard-2026-49e0e.firebaseapp.com", # ← same but .firebaseapp.com
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
